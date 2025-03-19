@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alunos</title>
+    <script>
+        function adicionarAluno() {
+            let lista = document.getElementById("listaAlunos");
+            let nome = prompt("Digite o nome do aluno:");
+            if (nome) {
+                let item = document.createElement("li");
+                item.textContent = nome;
+                lista.appendChild(item);
+            }
+            let continuar = confirm("Deseja adicionar mais um nome?");
+            if (!continuar) {
+                alert("Lista de alunos finalizada!");
+            } else {
+                adicionarAluno();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Lista de Alunos</h1>
+    <button onclick="adicionarAluno()">Adicionar Aluno</button>
+    <ul id="listaAlunos"></ul>
+</body>
+</html>
